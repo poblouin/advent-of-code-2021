@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-input = File.readlines('input')
+input = File.readlines('input.txt')
 
 def format_input(input, has_aim: false)
   behaviour = has_aim ? :aim : :depth

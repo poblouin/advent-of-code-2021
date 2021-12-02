@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-input = File.readlines('input').map(&:to_i)
+input = File.readlines('input.txt').map(&:to_i)
 
 def part1(input)
   input.each_with_index.reduce(0) { |sum, (element, index)| element > input[index - 1] ? sum + 1 : sum }

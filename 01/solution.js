@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const input = fs.readFileSync("./input", "utf8").split("\n").map(s => Number(s));
+const input = fs.readFileSync("./input.txt", "utf8").split("\n").map(s => Number(s));
 
 const part1 = () =>
   input.reduce(
