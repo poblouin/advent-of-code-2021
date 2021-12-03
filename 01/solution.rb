@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-input = File.readlines('input.txt').map(&:to_i)
+require '../input_reader'
 
 def part1(input)
   input.each_with_index.reduce(0) { |sum, (element, index)| element > input[index - 1] ? sum + 1 : sum }
@@ -23,5 +21,5 @@ def part2(input)
   count
 end
 
-puts part1 input
-puts part2 input
+puts part1(InputReader.read.map(&:to_i))
+puts part2(InputReader.read.map(&:to_i))

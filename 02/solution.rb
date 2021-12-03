@@ -1,12 +1,10 @@
-# frozen_string_literal: true
-
-input = File.readlines('input.txt')
+require '../input_reader'
 
 def format_input(input, has_aim: false)
   behaviour = has_aim ? :aim : :depth
 
   input.map do |element|
-    splitted = element.chomp.split(' ')
+    splitted = element.split(' ')
     key = splitted[0] == 'forward' ? :position : behaviour
     value = splitted[0] == 'up' ? -splitted[1].to_i : splitted[1].to_i
 
@@ -30,5 +28,5 @@ def part2(input)
   end
 end
 
-puts part1(input).values.inject(:*)
-puts part2(input).slice(:position, :depth).values.inject(:*)
+puts part1(InputReader.read).values.inject(:*)
+puts part2(InputReader.read).slice(:position, :depth).values.inject(:*)

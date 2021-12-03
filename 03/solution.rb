@@ -1,6 +1,4 @@
-# frozen_string_literal: true
-
-input = File.readlines 'input.txt', chomp: true
+require '../input_reader'
 
 # Common
 def count_bits_by_column(input, index: nil)
@@ -58,5 +56,5 @@ def part2(input)
   find_rating(input, :oxygen) * find_rating(input, :co2)
 end
 
-puts part1(input)
-puts part2(input)
+puts part1(InputReader.read)
+puts part2(InputReader.read)
