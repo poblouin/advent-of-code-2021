@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+require 'fileutils'
+
+OUTPUT_FILES = %w[sample.txt input.txt solution.rb].freeze
+
+day_today = ARGV[0] || Time.now.strftime('%d')
+
+Dir.exist?(day_today) || Dir.mkdir(day_today)
+Dir.chdir(day_today)
+FileUtils.touch OUTPUT_FILES

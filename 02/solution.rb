@@ -4,7 +4,7 @@ def format_input(input, has_aim: false)
   behaviour = has_aim ? :aim : :depth
 
   input.map do |element|
-    splitted = element.split(' ')
+    splitted = element.split
     key = splitted[0] == 'forward' ? :position : behaviour
     value = splitted[0] == 'up' ? -splitted[1].to_i : splitted[1].to_i
 
