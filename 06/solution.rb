@@ -20,9 +20,8 @@ def part2(input)
   fish_count = input.each_with_object(Array.new(9, 0)) { |n, memo| memo[n] += 1 }
 
   256.times do
-    new_fish_count = fish_count.shift
-    fish_count[6] += new_fish_count
-    fish_count[8] = new_fish_count
+    fish_count.rotate!
+    fish_count[6] += fish_count[8]
   end
 
   fish_count.sum
