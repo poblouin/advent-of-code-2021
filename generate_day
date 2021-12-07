@@ -2,9 +2,25 @@
 require 'fileutils'
 
 OUTPUT_FILES = %w[sample.txt input.txt solution.rb].freeze
+SOLUTION_SKELETON = "require '../input_reader'
+
+def format_input
+  InputReader.read
+end
+
+def part1(formatted_input)
+  formatted_input
+end
+
+puts part1(format_input)
+".freeze
 
 day_today = ARGV[0] || Time.now.strftime('%d')
 
 Dir.exist?(day_today) || Dir.mkdir(day_today)
 Dir.chdir(day_today)
+
+has_solution = File.exist? 'solution.rb'
 FileUtils.touch OUTPUT_FILES
+
+File.open('solution.rb', 'w') { |f| f.write SOLUTION_SKELETON } unless has_solution
